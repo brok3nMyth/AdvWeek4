@@ -13,7 +13,7 @@ import id.ac.ubaya.adv160419058week4.model.Student
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class ListViewModel:ViewModel() {
+class ListViewModel(application: Application):AndroidViewModel(application) {
     val studentsLiveData = MutableLiveData<ArrayList<Student>>()
     val studentsLoadErrorLiveData = MutableLiveData<Boolean>()
     val loadingLiveData = MutableLiveData<Boolean>()
