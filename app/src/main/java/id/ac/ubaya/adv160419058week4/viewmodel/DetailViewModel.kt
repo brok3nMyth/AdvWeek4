@@ -3,6 +3,8 @@ package id.ac.ubaya.adv160419058week4.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.ac.ubaya.adv160419058week4.model.Student
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class DetailViewModel: ViewModel() {
     val studentLiveData = MutableLiveData<Student>()

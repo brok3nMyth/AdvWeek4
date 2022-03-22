@@ -12,16 +12,7 @@ import id.ac.ubaya.adv160419058week4.viewmodel.ListViewModel
 import id.ac.ubaya.adv160419058week4.R
 import kotlinx.android.synthetic.main.fragment_student_list.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [StudentListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class StudentListFragment : Fragment() {
     private lateinit var viewModel: ListViewModel
     private val studentListAdapter  = StudentListAdapter(arrayListOf())
@@ -40,6 +31,15 @@ class StudentListFragment : Fragment() {
 
         recView.layoutManager = LinearLayoutManager(context)
         recView.adapter = studentListAdapter
+
+        refreshLayout.setOnRefreshListener {
+            recView.visibility = View.GONE
+
+            progressLoad.visibility = View.VISIBLE
+            viewModel.refresh()
+            refreshLayout.isRefreshing = false
+            txtError.visibility= View.GONE
+        }
 
         observeViewModel()
 

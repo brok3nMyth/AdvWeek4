@@ -7,22 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import id.ac.ubaya.adv160419058week4.viewmodel.DetailViewModel
 import id.ac.ubaya.adv160419058week4.R
 import kotlinx.android.synthetic.main.fragment_student_detail.*
 import kotlinx.android.synthetic.main.fragment_student_list.*
 import kotlinx.android.synthetic.main.student_list_item.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [StudentDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class StudentDetailFragment : Fragment() {
     private lateinit var viewModel: DetailViewModel
     private val studentListAdapter  = StudentListAdapter(arrayListOf())
