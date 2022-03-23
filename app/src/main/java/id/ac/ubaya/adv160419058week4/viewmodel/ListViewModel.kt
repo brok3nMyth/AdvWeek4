@@ -50,5 +50,9 @@ class ListViewModel(application: Application):AndroidViewModel(application) {
         }
         queue?.add(stringRequest)
     }
+    override fun onCleared() {
+        super.onCleared()
+        queue?.cancelAll(TAG)
+    }
 
 }
